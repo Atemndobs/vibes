@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  vibes-app:
+    container_name: vibes
+    image: atemndobs/vibes:v.1
+    build: .
+    ports:
+      - "19006:19006"
+      - "8082:8081"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run web
